@@ -10,6 +10,9 @@ class NoteCollection extends ChangeNotifier {
 
   Note getByPosition(int index) => notes[index];
 
+  Note getByTitle(String title) =>
+      notes.singleWhere((note) => note.title == title);
+
   void add(Note note) {
     notes.add(note);
     notifyListeners();
@@ -46,5 +49,10 @@ Or how about a list?
     final index = notes.indexWhere((note) => note.id == id);
     notes[index] = notes[index].copyWith(content: content);
     notifyListeners();
+  }
+
+  Iterable<Note> findNotesWithMatchingTitles(String searchString) {
+    return notes.where((note) =>
+        note.title.toLowerCase().contains(searchString.toLowerCase()));
   }
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pds/models/app_state.dart';
 import 'package:pds/models/note_collection.dart';
 import 'package:pds/routes.gr.dart';
-import 'package:pds/screens/notes_list_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() => runApp(PdsApp());
