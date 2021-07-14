@@ -27,7 +27,7 @@ class _NoteEditorState extends State<NoteEditor> {
     _controller.addListener(() {
       context
           .read<NoteCollection>()
-          .updateNote(widget.note.id, _controller.text);
+          .updateNote(widget.note.id, content: _controller.text);
     });
 
     _controller.addListener(() async {

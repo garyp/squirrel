@@ -45,9 +45,9 @@ Or how about a list?
     return id;
   }
 
-  void updateNote(String id, String content) {
+  void updateNote(String id, {String? title, String? content}) {
     final index = notes.indexWhere((note) => note.id == id);
-    notes[index] = notes[index].copyWith(content: content);
+    notes[index] = notes[index].copyWith(title: title, content: content);
     notifyListeners();
   }
 
